@@ -34,13 +34,45 @@ select amount from `order` where account_to = 30067122;
 select trans_id, `date`, `type` , amount from trans where account_id = 793 order by `date` desc limit 10;
 # In the client table, of all districts with a district_id lower than 10, how many clients are from each district_id? 
 # Show the results sorted by the district_id in ascending order.
+
+##OPTIONAL
+
+#13
+# In the client table, of all districts with a district_id lower than 10, how many clients are from each district_id? 
+# Show the results sorted by the district_id in ascending order.
 select district_id, count(district_id ) from client where district_id<10 group by district_id order by district_id asc;
-# In the card table, how many cards exist for each type? Rank the result starting with the most frequent type.
+
+# 14
+# the card table, how many cards exist for each type? Rank the result starting with the most frequent type.
 select type, count(card_id) from card group by type order by count(card_id) desc;
-# Using the loan table, print the top 10 account_ids based on the sum of all of their loan amounts.
-select account_id, sum(amount) from loan  order by sum(amount) asc  limit 10; ##DOES NOT WORK
 
+#15 ##DOES NOT WORK
+#Using the loan table, print the top 10 account_ids based on the sum of all of their loan amounts.
+select account_id, sum(amount) from loan  order by sum(amount) asc  limit 10;
+
+#16 ## DOES NOT WORK 
 #In the loan table, retrieve the number of loans issued for each day, before (excl) 930907, ordered by date in descending order.
-select date, count(distinct(loan_id)) from loan where date between 0 and 930907 order by date desc ##DOES NOT WORL
+select date, count(distinct(loan_id)) from loan where date between 0 and 930907 order by date desc ;
+
+# 17 
+# In the loan table, for each day in December 1997, count the number of loans issued for each unique loan duration,
+# ordered by date and duration, both in ascending order. You can ignore days without any loans in your output.
+select  date, duration,count(amount) from loan where date between 971201 and 971231 group by date, duration order by date , duration;
 
 
+#18
+#In the trans table, for account_id 396, sum the amount of transactions for each type (VYDAJ = Outgoing, PRIJEM = Incoming). 
+#Your output should have the account_id, the type and the sum of amount, named as total_amount. Sort alphabetically by type.
+select account_id, type, sum(amount) as total_amount from trans where account_id = 396 group by type, account_id order by type ;
+
+#19 ### not able to change values forr transaction type 
+#From the previous output, translate the values for type to English, rename the column to transaction_type, round total_amount down to an integer
+select account_id, case(type when "VYDAJ" then "Outgoing" else "Incoming")as transaction_type, floor(amount as total_amount) from loan 
+where account_id = 396 
+group by transaction_type, account_id
+order by transaction_type;
+
+select account_id, type as transaction_type, floor(sum(amount)) as total_amount from loan 
+where account_id = 396 
+group by type, account_id
+order by type;
