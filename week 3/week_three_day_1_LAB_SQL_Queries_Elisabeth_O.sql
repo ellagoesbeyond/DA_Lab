@@ -50,9 +50,9 @@ select type, count(card_id) from card group by type order by count(card_id) desc
 #Using the loan table, print the top 10 account_ids based on the sum of all of their loan amounts.
 select account_id, sum(amount) from loan  order by sum(amount) asc  limit 10;
 
-#16 ## DOES NOT WORK 
+#16 
 #In the loan table, retrieve the number of loans issued for each day, before (excl) 930907, ordered by date in descending order.
-select date, count(distinct(loan_id)) from loan where date between 0 and 930907 order by date desc ;
+select date, count(loan_id) from loan where date < 930907 group by date  order by date desc ;
 
 # 17 
 # In the loan table, for each day in December 1997, count the number of loans issued for each unique loan duration,
