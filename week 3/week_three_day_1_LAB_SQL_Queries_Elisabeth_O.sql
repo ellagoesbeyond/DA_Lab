@@ -1,7 +1,5 @@
 use bank;
-# Query 1
 # Get the id values of the first 5 clients from district_id with a value equals to 1.
-select * from client;
 select client_id from client as first_five_clients where district_id = 1 limit 5 ;
 # longest clients from Prague (district =1) have client_id (2,3,22,23,28)
 select * from district;
@@ -48,7 +46,7 @@ select type, count(card_id) from card group by type order by count(card_id) desc
 
 #15 ##DOES NOT WORK
 #Using the loan table, print the top 10 account_ids based on the sum of all of their loan amounts.
-select account_id, sum(amount) from loan  order by sum(amount) asc  limit 10;
+# select account_id, sum(amount) from loan  order by sum(amount) asc  limit 10;
 
 #16 
 #In the loan table, retrieve the number of loans issued for each day, before (excl) 930907, ordered by date in descending order.
