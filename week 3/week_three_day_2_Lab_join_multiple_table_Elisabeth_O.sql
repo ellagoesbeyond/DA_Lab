@@ -1,9 +1,4 @@
 # Write a query to display for each store its store ID, city, and country.
-
-# select title, count(title) from inventory i
-# join rental r on r.inventory_id = i.inventory_id 
-# join film f  on f.film_id = i.film_id 
-
 select store_id, city, country from store st
 join address ad on st.address_id = ad.address_id
 join city ci on ad.city_id = ci.city_id

@@ -1,0 +1,1028 @@
+{
+	"tables": {
+		"9fefd554-a428-4dfe-812f-7b088ad1dba6": {
+			"id": "9fefd554-a428-4dfe-812f-7b088ad1dba6",
+			"visible": true,
+			"name": "players",
+			"desc": "list of all players in NHL with their sets of features",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "c2d6cba3-4557-4ee2-9580-2fea8714f23f",
+					"name": "player_id",
+					"datatype": "INT",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": ""
+				},
+				{
+					"id": "7ded372c-a613-4e6f-8c4b-acc0f5892267",
+					"name": "team_id",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"fk": true,
+					"ref": "teams"
+				},
+				{
+					"id": "89ca486d-c49b-4972-a106-ff460234d476",
+					"name": "skill_level_id",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"fk": true,
+					"ref": "skill_level"
+				},
+				{
+					"id": "ae6c13b7-5c72-4f76-9807-4cf2bf385bea",
+					"name": "injuries_injury_id",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"fk": true,
+					"ref": "injuries"
+				},
+				{
+					"id": "2e45b59f-5e3f-46df-98d4-dca06836e800",
+					"name": "full_name",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				},
+				{
+					"id": "9f4d4428-fde7-4fc9-a856-4d2cc065dd88",
+					"name": "position",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				}
+			],
+			"relations": [
+				"ed7c87ca-865d-473b-9813-cf5ccba4ad4d",
+				"613a090e-fb80-4fd9-b0c9-70a872f4670f",
+				"030b4b2a-5085-4222-9d3a-be0037f3dcf6",
+				"84b505fe-0eba-4209-ae71-d9cb6824bd6b"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "b936f9c7-7372-482d-8d92-2e1b4cb84a24",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "2e230473-c461-4baa-83d6-0c722f91659c",
+							"colid": "c2d6cba3-4557-4ee2-9580-2fea8714f23f"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"tabletype": "na",
+			"collation": "",
+			"charset": "",
+			"rowformat": "na"
+		},
+		"d122d4d3-ff72-46d4-9235-25bd7d4a927e": {
+			"id": "d122d4d3-ff72-46d4-9235-25bd7d4a927e",
+			"visible": true,
+			"name": "skill_level",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "ed50a9d6-7a29-4787-959a-3d230459670f",
+					"name": "skill_level_id",
+					"datatype": "INT",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": ""
+				},
+				{
+					"id": "be91e40b-07f7-4f82-ac2e-b5cdf06fcf67",
+					"name": "ability",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				},
+				{
+					"id": "cddd99d0-1be1-4947-9406-3f062b7b07f1",
+					"name": "problem_solving",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				}
+			],
+			"relations": [
+				"ed7c87ca-865d-473b-9813-cf5ccba4ad4d"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "82a370de-a272-4068-8355-d7005eed03cf",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "3a0b98f4-0706-4157-b5ce-1d5c0270b0a1",
+							"colid": "ed50a9d6-7a29-4787-959a-3d230459670f"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"tabletype": "na",
+			"collation": "",
+			"charset": "",
+			"rowformat": "na"
+		},
+		"7bef4647-d6ca-4561-ae02-9c186c996343": {
+			"id": "7bef4647-d6ca-4561-ae02-9c186c996343",
+			"visible": true,
+			"name": "coaches",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "096dcb7d-4d2b-4686-8f86-9f492ca654dc",
+					"name": "coach_id",
+					"datatype": "INT",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				},
+				{
+					"id": "954028e5-beb1-476c-8cd6-d2b272532e2e",
+					"name": "full_name",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				},
+				{
+					"id": "6307dace-f14e-4324-a069-a110198e8752",
+					"name": "age",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				},
+				{
+					"id": "2c238d53-e466-42f2-813d-dbddb13fd77d",
+					"name": "years_in_service",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				}
+			],
+			"relations": [
+				"e3c0d679-cfbe-458a-b167-4a7cce41e88e"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "9e29f48a-1375-48b0-a3e3-1b866fbe3339",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "9b170d62-78d2-4480-9d58-02e2d93ec57b",
+							"colid": "096dcb7d-4d2b-4686-8f86-9f492ca654dc"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"tabletype": "na",
+			"collation": "",
+			"charset": "",
+			"rowformat": "na"
+		},
+		"df00d007-b6d1-4aee-8c14-339cade7d839": {
+			"id": "df00d007-b6d1-4aee-8c14-339cade7d839",
+			"visible": true,
+			"name": "teams",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "0b34f4f6-5875-4f36-a48d-5f4688eba7e7",
+					"name": "team_id",
+					"datatype": "INT",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": ""
+				},
+				{
+					"id": "d809cca5-4511-4a2c-930d-2496b2f85468",
+					"name": "coach_id",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": "",
+					"fk": true,
+					"ref": "coaches"
+				},
+				{
+					"id": "546ac132-707f-4a0e-932a-2ef5be17d005",
+					"name": "name",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				},
+				{
+					"id": "69096b87-31e7-4f8b-9556-5243e325e0ac",
+					"name": "city",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				},
+				{
+					"id": "32cb51dc-ab87-4506-b091-2f1015aabed4",
+					"name": "captain_player_id",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"fk": true,
+					"ref": "players"
+				}
+			],
+			"relations": [
+				"613a090e-fb80-4fd9-b0c9-70a872f4670f",
+				"2920db89-862f-4c04-9840-7e47a25d5749",
+				"d1e82de6-4c6b-4414-8481-2117538bbdde",
+				"e3c0d679-cfbe-458a-b167-4a7cce41e88e",
+				"84b505fe-0eba-4209-ae71-d9cb6824bd6b"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "602b4d47-4a37-4de7-9655-9512499c1571",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "d482ee19-a676-44e3-ab7f-fecfb0fc3c63",
+							"colid": "0b34f4f6-5875-4f36-a48d-5f4688eba7e7"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"tabletype": "na",
+			"collation": "",
+			"charset": "",
+			"rowformat": "na"
+		},
+		"f62b3008-dd1e-4d37-b696-73859298d1c5": {
+			"id": "f62b3008-dd1e-4d37-b696-73859298d1c5",
+			"visible": true,
+			"name": "game",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "d285a528-5314-4ad7-9212-39ac91acaf0e",
+					"name": "game_id",
+					"datatype": "INT",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": ""
+				},
+				{
+					"id": "9468afd0-9004-4891-bd52-70983a600aa2",
+					"name": "team_id_guest",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"fk": true,
+					"ref": "teams"
+				},
+				{
+					"id": "3b70f3c6-cc5c-484c-b6f4-c904489495e8",
+					"name": "team_id_host",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"fk": true,
+					"ref": "teams"
+				},
+				{
+					"id": "9e0b6838-d39b-48d0-97e8-a93e214224dd",
+					"name": "points_host",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				},
+				{
+					"id": "78171386-afb9-44d5-9583-648b6856f7d2",
+					"name": "points_guest",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				},
+				{
+					"id": "d2dd0c02-928c-46b5-bef5-1f3967aa98c0",
+					"name": "date",
+					"datatype": "DATETIME",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				}
+			],
+			"relations": [
+				"2920db89-862f-4c04-9840-7e47a25d5749",
+				"d1e82de6-4c6b-4414-8481-2117538bbdde"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "219b24a0-6caa-4a32-9823-f4af7bd71949",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "b6fbc209-6ab8-40e3-b466-259d8d258e67",
+							"colid": "d285a528-5314-4ad7-9212-39ac91acaf0e"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"tabletype": "na",
+			"collation": "",
+			"charset": "",
+			"rowformat": "na"
+		},
+		"432a8f23-51dd-49b2-8c84-51561f31d6d4": {
+			"id": "432a8f23-51dd-49b2-8c84-51561f31d6d4",
+			"visible": true,
+			"name": "injuries",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "82f1978b-498e-4a58-84a8-db7b58d31094",
+					"name": "injury_id",
+					"datatype": "INT",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": ""
+				},
+				{
+					"id": "bb435ae4-d320-4300-add2-d732e573a76a",
+					"name": "type",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				},
+				{
+					"id": "2ea32e67-266f-42e2-a70d-ed2817321631",
+					"name": "doctor",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				},
+				{
+					"id": "af2dfd60-ffc9-4515-aecb-c4e31f7fec8d",
+					"name": "medicine",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				},
+				{
+					"id": "d428a980-ce4d-402e-a93f-fa44a886de51",
+					"name": "healed",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"autoinc": false,
+					"collation": null,
+					"charset": null,
+					"binary": false,
+					"zerofill": false,
+					"unsigned": false,
+					"enum": "",
+					"after": ""
+				}
+			],
+			"relations": [
+				"030b4b2a-5085-4222-9d3a-be0037f3dcf6"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "5cb48087-4484-49c7-81df-c9a8d7ea22ac",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "f05e7024-f782-455f-b536-7b1729357470",
+							"colid": "82f1978b-498e-4a58-84a8-db7b58d31094"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"tabletype": "na",
+			"collation": "",
+			"charset": "",
+			"rowformat": "na"
+		}
+	},
+	"relations": {
+		"ed7c87ca-865d-473b-9813-cf5ccba4ad4d": {
+			"id": "ed7c87ca-865d-473b-9813-cf5ccba4ad4d",
+			"visible": true,
+			"name": "skill_level_players",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "82a370de-a272-4068-8355-d7005eed03cf",
+			"parent": "d122d4d3-ff72-46d4-9235-25bd7d4a927e",
+			"child": "9fefd554-a428-4dfe-812f-7b088ad1dba6",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "2d59cf28-e03d-4977-b40e-a179fb052894",
+					"parentcol": "ed50a9d6-7a29-4787-959a-3d230459670f",
+					"childcol": "89ca486d-c49b-4972-a106-ff460234d476"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"613a090e-fb80-4fd9-b0c9-70a872f4670f": {
+			"id": "613a090e-fb80-4fd9-b0c9-70a872f4670f",
+			"visible": true,
+			"name": "teams_players",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "602b4d47-4a37-4de7-9655-9512499c1571",
+			"parent": "df00d007-b6d1-4aee-8c14-339cade7d839",
+			"child": "9fefd554-a428-4dfe-812f-7b088ad1dba6",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "83f44a9f-65fe-412d-8692-37759a9c5919",
+					"parentcol": "0b34f4f6-5875-4f36-a48d-5f4688eba7e7",
+					"childcol": "7ded372c-a613-4e6f-8c4b-acc0f5892267"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"2920db89-862f-4c04-9840-7e47a25d5749": {
+			"id": "2920db89-862f-4c04-9840-7e47a25d5749",
+			"visible": true,
+			"name": "teams_game",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "602b4d47-4a37-4de7-9655-9512499c1571",
+			"parent": "df00d007-b6d1-4aee-8c14-339cade7d839",
+			"child": "f62b3008-dd1e-4d37-b696-73859298d1c5",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "60b9e1de-2c12-43bc-ade1-185ff22290a9",
+					"parentcol": "0b34f4f6-5875-4f36-a48d-5f4688eba7e7",
+					"childcol": "9468afd0-9004-4891-bd52-70983a600aa2"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"d1e82de6-4c6b-4414-8481-2117538bbdde": {
+			"id": "d1e82de6-4c6b-4414-8481-2117538bbdde",
+			"visible": true,
+			"name": "teams_game",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "602b4d47-4a37-4de7-9655-9512499c1571",
+			"parent": "df00d007-b6d1-4aee-8c14-339cade7d839",
+			"child": "f62b3008-dd1e-4d37-b696-73859298d1c5",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "dd5608bd-b73c-4f1a-a4a6-23239342ee99",
+					"parentcol": "0b34f4f6-5875-4f36-a48d-5f4688eba7e7",
+					"childcol": "3b70f3c6-cc5c-484c-b6f4-c904489495e8"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"e3c0d679-cfbe-458a-b167-4a7cce41e88e": {
+			"id": "e3c0d679-cfbe-458a-b167-4a7cce41e88e",
+			"visible": true,
+			"name": "coaches_teams",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "9e29f48a-1375-48b0-a3e3-1b866fbe3339",
+			"parent": "7bef4647-d6ca-4561-ae02-9c186c996343",
+			"child": "df00d007-b6d1-4aee-8c14-339cade7d839",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "one",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "ee068f1e-e711-4aba-ac63-fb0f90eafc3a",
+					"parentcol": "096dcb7d-4d2b-4686-8f86-9f492ca654dc",
+					"childcol": "d809cca5-4511-4a2c-930d-2496b2f85468"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"030b4b2a-5085-4222-9d3a-be0037f3dcf6": {
+			"id": "030b4b2a-5085-4222-9d3a-be0037f3dcf6",
+			"visible": true,
+			"name": "injuries_players",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "5cb48087-4484-49c7-81df-c9a8d7ea22ac",
+			"parent": "432a8f23-51dd-49b2-8c84-51561f31d6d4",
+			"child": "9fefd554-a428-4dfe-812f-7b088ad1dba6",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "f3f93aa1-37c7-46c5-9edf-1c6d7e85fa6f",
+					"parentcol": "82f1978b-498e-4a58-84a8-db7b58d31094",
+					"childcol": "ae6c13b7-5c72-4f76-9807-4cf2bf385bea"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"84b505fe-0eba-4209-ae71-d9cb6824bd6b": {
+			"id": "84b505fe-0eba-4209-ae71-d9cb6824bd6b",
+			"visible": true,
+			"name": "players_teams",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "b936f9c7-7372-482d-8d92-2e1b4cb84a24",
+			"parent": "9fefd554-a428-4dfe-812f-7b088ad1dba6",
+			"child": "df00d007-b6d1-4aee-8c14-339cade7d839",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "one",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "14f8abcb-0e65-4d4e-91b7-50239f1ee784",
+					"parentcol": "c2d6cba3-4557-4ee2-9580-2fea8714f23f",
+					"childcol": "32cb51dc-ab87-4506-b091-2f1015aabed4"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		}
+	},
+	"notes": {},
+	"lines": {},
+	"model": {
+		"name": "NHL ",
+		"id": "144b8f94-eb7e-421c-a994-aeaf332887ea",
+		"activeDiagram": "6f9d245a-d126-4495-b014-ee5d0ad20781",
+		"desc": "",
+		"path": "",
+		"type": "MYSQL",
+		"version": 1,
+		"parentTableInFkCols": true,
+		"caseConvention": "under",
+		"replaceSpace": "_",
+		"color": "transparent",
+		"sideSelections": true,
+		"isDirty": true,
+		"storedin": {
+			"major": 4,
+			"minor": 6,
+			"extra": 6
+		},
+		"embeddedInParentsIsDisplayed": true,
+		"schemaContainerIsDisplayed": false,
+		"cardinalityIsDisplayed": false,
+		"estimatedSizeIsDisplayed": false,
+		"writeFileParam": false,
+		"def_tabletype": "na",
+		"def_collation": "",
+		"def_charset": "",
+		"def_coltopk": true,
+		"def_rowformat": "na",
+		"sqlSettings": {
+			"wrapLines": true,
+			"wrapOffset": 80,
+			"indent": true,
+			"indentationString": "spaces",
+			"indentationSize": 2,
+			"limitItemsOnLine": true,
+			"maxListItemsOnLine": 3,
+			"statementDelimiter": ";",
+			"routineDelimiter": "//",
+			"keywordCase": "upper",
+			"identiferCase": "original",
+			"includeSchema": "always",
+			"quotation": "if_needed"
+		},
+		"lastSaved": "Wed Aug 24 2022 12:38:29 GMT+0200 (Central European Summer Time)"
+	},
+	"otherObjects": {},
+	"diagrams": {
+		"6f9d245a-d126-4495-b014-ee5d0ad20781": {
+			"name": "EDR - NHL ",
+			"description": "",
+			"id": "6f9d245a-d126-4495-b014-ee5d0ad20781",
+			"keysgraphics": false,
+			"linegraphics": "detailed",
+			"zoom": 1,
+			"background": "#777777",
+			"lineColor": "#000000",
+			"isOpen": true,
+			"main": true,
+			"diagramItems": {
+				"9fefd554-a428-4dfe-812f-7b088ad1dba6": {
+					"referencedItemId": "9fefd554-a428-4dfe-812f-7b088ad1dba6",
+					"x": 446,
+					"y": 30,
+					"gHeight": 209,
+					"gWidth": 214,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": true,
+					"autoExpand": true
+				},
+				"d122d4d3-ff72-46d4-9235-25bd7d4a927e": {
+					"referencedItemId": "d122d4d3-ff72-46d4-9235-25bd7d4a927e",
+					"x": 850,
+					"y": 37,
+					"gHeight": 109,
+					"gWidth": 272,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": true,
+					"autoExpand": true
+				},
+				"7bef4647-d6ca-4561-ae02-9c186c996343": {
+					"referencedItemId": "7bef4647-d6ca-4561-ae02-9c186c996343",
+					"x": 528,
+					"y": 354,
+					"gHeight": 118,
+					"gWidth": 249,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": true,
+					"autoExpand": true
+				},
+				"df00d007-b6d1-4aee-8c14-339cade7d839": {
+					"referencedItemId": "df00d007-b6d1-4aee-8c14-339cade7d839",
+					"x": 70,
+					"y": 95,
+					"gHeight": 179,
+					"gWidth": 203,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": true,
+					"autoExpand": true
+				},
+				"f62b3008-dd1e-4d37-b696-73859298d1c5": {
+					"referencedItemId": "f62b3008-dd1e-4d37-b696-73859298d1c5",
+					"x": 92,
+					"y": 335,
+					"gHeight": 135,
+					"gWidth": 203,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true
+				},
+				"432a8f23-51dd-49b2-8c84-51561f31d6d4": {
+					"referencedItemId": "432a8f23-51dd-49b2-8c84-51561f31d6d4",
+					"x": 854,
+					"y": 170,
+					"gHeight": 118,
+					"gWidth": 261,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": true,
+					"autoExpand": true
+				}
+			},
+			"scroll": {
+				"x": 0,
+				"y": 0
+			},
+			"type": "erd"
+		}
+	},
+	"order": [
+		"9fefd554-a428-4dfe-812f-7b088ad1dba6",
+		"d122d4d3-ff72-46d4-9235-25bd7d4a927e",
+		"7bef4647-d6ca-4561-ae02-9c186c996343",
+		"df00d007-b6d1-4aee-8c14-339cade7d839",
+		"f62b3008-dd1e-4d37-b696-73859298d1c5",
+		"432a8f23-51dd-49b2-8c84-51561f31d6d4",
+		"ed7c87ca-865d-473b-9813-cf5ccba4ad4d",
+		"613a090e-fb80-4fd9-b0c9-70a872f4670f",
+		"2920db89-862f-4c04-9840-7e47a25d5749",
+		"d1e82de6-4c6b-4414-8481-2117538bbdde",
+		"e3c0d679-cfbe-458a-b167-4a7cce41e88e",
+		"030b4b2a-5085-4222-9d3a-be0037f3dcf6",
+		"84b505fe-0eba-4209-ae71-d9cb6824bd6b"
+	],
+	"collapsedTreeItems": []
+}
