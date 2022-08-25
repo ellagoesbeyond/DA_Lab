@@ -68,8 +68,8 @@ select * from film ;
 
 select title from film where 
 film_id in(
-select film_id from film_actor where actor_id in(
-select actor_id from (select  actor_id ,count(actor_id) from film_actor group by actor_id order by count(actor_id) desc limit 1) as p) )
+select film_id from film_actor where actor_id = (
+select  actor_id  from film_actor group by actor_id order by count(actor_id) desc limit 1) );
 
 
 #7 
@@ -79,11 +79,14 @@ select * from payment;
 select * from rental;
 select * from film;
 
-select title from film where film_id in (
-select film_id from inventory where inventory_id in ( 
-select inventory_id from rental where customer_id =(
-select customer_id from (
-select customer_id , sum(amount) from payment group by customer_id order by sum(amount) desc limit 1) as p )))
+select title from film where film_id in 
+	(select film_id from inventory where inventory_id in 
+		(select inventory_id from rental where customer_id =
+			(select customer_id from
+				(select customer_id , sum(amount) from payment group by customer_id order by sum(amount) desc limit 1) as p
+			)
+		)
+	);
 
 
 #8 
@@ -94,23 +97,16 @@ select * from film
 select * from customer;
 
 
-select first_name , last_name from customer where customer_id in (
-select customer_id from (
-select customer_id, total from (
-
-select customer_id, sum(amount) as total 
-from payment 
-group by customer_id 
-order by sum(amount)) as a 
-where total > (
-select avg(summe) 
-from (select summe 
-from (select customer_id , sum(amount) as summe 
-from payment 
-group by customer_id 
-order by sum(amount)) as p ) 
-as r)
-group by customer_id
-order by total desc  
-) as k)
+select first_name , last_name from customer where customer_id in 
+	(select customer_id from 
+		(select customer_id, total from 
+			(select customer_id, sum(amount) as total from payment group by customer_id order by sum(amount)) as a where total > 
+											(select avg(summe) from 
+													(select summe from 
+														(select customer_id , sum(amount) as summe from payment group by customer_id order by sum(amount)) as p )
+													as r)
+			group by customer_id
+			order by total desc  
+		) 
+	as k)
 order by first_name asc
