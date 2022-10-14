@@ -1,2 +1,3 @@
-# DA_Lab_week1
-submitting every LAB assesment from the first week 
+# Content
+
+I learned Python in a bootcamp @iron hack. Therefore we submitted labs and exercises in this repo.
